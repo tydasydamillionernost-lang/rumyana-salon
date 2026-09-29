@@ -1,0 +1,1174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Румяна — салон красоты в Улан-Удэ</title>
+  <meta name="description" content="Румяна — салон красоты в Улан-Удэ. Два филиала: ул. Балтахинова, 36 и ул. Сахьяновой, 9/19а. Маникюр, педикюр, брови, ресницы, макияж и укладки. Онлайн-запись.">
+  <meta name="theme-color" content="#FCF8F6">
+  <link rel="icon" type="image/png" href="img/logo-mark.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..700&family=Unbounded:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    /* Фирменные цвета (R G B) взяты из логотипа: розовый #E0879F, персиковый #F8B0B0, терракотовый #CF8D75.
+       Для кнопок и текста — затемнённые оттенки тех же цветов (контраст ≥ 4.5:1). */
+    :root {
+      --c-page: 252 248 246;   /* кремовый фон */
+      --c-tile: 246 236 231;   /* бежево-персиковые плитки */
+      --c-sand: 240 222 212;   /* песочный */
+      --c-ink: 59 47 44;       /* тёплый тёмно-коричневый вместо чёрного */
+      --c-muted: 110 94 90;
+      --c-line: 236 220 213;
+      --c-rose: 168 72 101;    /* розовый логотипа, затемнённый: кнопки, ссылки */
+      --c-rose-hover: 146 58 86;
+      --c-rose-soft: 250 228 235;
+      --c-rose-light: 224 135 159; /* розовый логотипа как есть: декор, ссылки на тёмном */
+      --c-peach: 248 176 176;  /* персиковый логотипа */
+      --c-terra: 154 94 72;    /* терракотовый логотипа, затемнённый для текста */
+      --font-sans: Raleway, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; /* шрифт логотипа */
+      --font-display: Unbounded, Raleway, sans-serif; /* широкий шрифт заголовков */
+    }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function c(v) { return 'rgb(var(' + v + ') / <alpha-value>)'; }
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            page: c('--c-page'),
+            tile: c('--c-tile'),
+            sand: c('--c-sand'),
+            ink: c('--c-ink'),
+            muted: c('--c-muted'),
+            line: c('--c-line'),
+            rose: { DEFAULT: c('--c-rose'), hover: c('--c-rose-hover'), soft: c('--c-rose-soft'), light: c('--c-rose-light') },
+            peach: c('--c-peach'),
+            terra: c('--c-terra')
+          },
+          fontFamily: {
+            sans: ['Raleway', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'system-ui', 'sans-serif'],
+            serif: ['Raleway', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: rgb(var(--c-page)); color: rgb(var(--c-ink)); font-family: var(--font-sans); font-weight: 460; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    ::selection { background: rgb(var(--c-rose-soft)); }
+    [id] { scroll-margin-top: 72px; }
+    :focus-visible { outline: 2px solid rgb(var(--c-rose)); outline-offset: 3px; border-radius: 6px; }
+    button, [role="tab"], label { cursor: pointer; }
+
+    .headline { font-family: var(--font-display); letter-spacing: -0.02em; line-height: 1.15; font-weight: 300; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+   .gradient-text { font-weight: 600; background: linear-gradient(92deg, rgb(var(--c-rose)) 0%, #C9677F 55%, #C27A63 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    .ph { position: relative; overflow: hidden; background:
+      radial-gradient(80% 60% at 25% 20%, rgba(255,255,255,.75), transparent 60%),
+      radial-gradient(70% 70% at 85% 90%, var(--ph-c, rgba(196,140,128,.3)), transparent 65%),
+      linear-gradient(160deg, var(--ph-a, #F8EFE9), var(--ph-b, #E9D3C6)); }
+    .ph-label { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: .75rem; font-weight: 500; letter-spacing: .08em; color: rgb(var(--c-ink) / .45); white-space: nowrap; }
+    .ph-1 { --ph-a: #FCF4F0; --ph-b: #F0DCD2; }
+    .ph-2 { --ph-a: #FAEDEF; --ph-b: #EDC3CF; --ph-c: rgba(224,135,159,.3); }
+    .ph-3 { --ph-a: #FDF7F5; --ph-b: #F6E0DD; --ph-c: rgba(248,176,176,.35); }
+    .ph-4 { --ph-a: #FBEDEA; --ph-b: #F1C6BD; --ph-c: rgba(207,141,117,.28); }
+
+    .hero-glow { background: radial-gradient(60% 60% at 12% 8%, rgb(var(--c-rose-soft)) 0%, transparent 70%), radial-gradient(50% 55% at 92% 18%, rgb(var(--c-sand)) 0%, transparent 70%); }
+    .btn-shadow { box-shadow: 0 12px 30px -12px rgb(var(--c-rose) / .6); }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; }
+
+    .word { display: inline-block; opacity: 0; transform: translateY(.45em); animation: wordIn 1s cubic-bezier(.16,1,.3,1) forwards; }
+    @keyframes wordIn { to { opacity: 1; transform: none; } }
+
+    #nav { background: rgb(var(--c-page) / .78); backdrop-filter: saturate(160%) blur(20px); -webkit-backdrop-filter: saturate(160%) blur(20px); }
+    #nav.is-scrolled { box-shadow: 0 1px 0 rgb(var(--c-ink) / .08); }
+
+    /* ---------- Витрина направлений (светлые пастельные слайды) ---------- */
+    #sc { transition: background-color .9s cubic-bezier(.16,1,.3,1), color .6s ease; touch-action: pan-y; }
+    #sc::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(60% 55% at 50% 45%, rgba(255,255,255,.45), transparent 70%), radial-gradient(90% 60% at 50% 110%, rgb(var(--c-ink) / .08), transparent 70%); }
+    .sc-bg { background-color: #F4D6DF; }
+    .sc-glass { background: rgba(255,255,255,.5); }
+    .sc-glass:hover { background: rgba(255,255,255,.8); }
+    .sc-visual { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none;
+      transition: transform 1s cubic-bezier(.16,1,.3,1), opacity .7s ease; transform: translate(62%, 58%) scale(.18); }
+    .sc-visual.is-active { opacity: 1; transform: none; }
+    .sc-visual.is-prev { opacity: 0; transform: translate(-55%, -45%) scale(.55) rotate(-8deg); }
+    .sc-visual.no-anim { transition: none !important; }
+    .sc-orb { position: relative; width: min(74%, 330px); aspect-ratio: 1; border-radius: 9999px;
+      background: radial-gradient(circle at 32% 28%, rgba(255,255,255,.95), rgba(255,255,255,.5) 45%, rgba(255,255,255,.25) 75%), rgba(255,255,255,.2);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.7), 0 40px 80px -30px rgb(var(--c-ink) / .3); display: flex; align-items: center; justify-content: center; }
+    .sc-visual.is-active .sc-orb { animation: bob 5s ease-in-out infinite; }
+    @keyframes bob { 50% { transform: translateY(-10px); } }
+    .sc-shadow { position: absolute; bottom: 6%; left: 50%; width: 46%; height: 18px; transform: translateX(-50%); border-radius: 50%; background: rgb(var(--c-ink) / .18); filter: blur(12px); }
+    .sc-text { animation: scText .8s cubic-bezier(.16,1,.3,1) both; }
+    @keyframes scText { from { opacity: 0; transform: translateY(18px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+    .sc-dot { position: relative; overflow: hidden; }
+    .sc-dot > span { position: absolute; inset: 0; transform-origin: left; transform: scaleX(0); background: currentColor; }
+    .sc-dot { transition: width .5s cubic-bezier(.16,1,.3,1), background-color .3s; }
+    .sc-dot.is-active { width: 3.5rem; background-color: rgb(var(--c-ink) / .18); }
+    .sc-dot.is-active > span { animation: dotFill var(--sc-dur, 5.5s) linear forwards; }
+    #sc.is-paused .sc-dot.is-active > span { animation-play-state: paused; }
+    .sc-chip-icon { transition: transform .4s cubic-bezier(.16,1,.3,1), background-color .3s, color .3s; }
+    .sc-chip[aria-pressed="true"] { background: #fff; box-shadow: 0 0 0 1.5px rgb(var(--c-rose)); }
+    .sc-chip[aria-pressed="true"] .sc-chip-icon { background: rgb(var(--c-rose)); color: #fff; transform: rotate(45deg); }
+    @keyframes dotFill { to { transform: scaleX(1); } }
+
+    /* ---------- Услуги ---------- */
+    .tabs { scrollbar-width: none; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab-btn[aria-selected="true"] { background: rgb(var(--c-rose)); color: #fff; }
+    .fade-in { animation: fadeIn .55s cubic-bezier(.16,1,.3,1) both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    .svc-row[aria-pressed="true"] { background: rgb(var(--c-rose-soft) / .6); }
+    .svc-row[aria-pressed="true"] .plus { background: rgb(var(--c-rose)); color: #fff; transform: rotate(45deg); }
+    .svc-row[aria-pressed="true"] .svc-name { color: rgb(var(--c-rose)); }
+    .plus { transition: transform .4s cubic-bezier(.16,1,.3,1), background .3s, color .3s; }
+
+    /* ---------- Контакты: при прокрутке фон мягко темнеет до тёплого какао ---------- */
+    #contacts { position: relative; }
+    #contacts::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 140px; pointer-events: none;
+      background: linear-gradient(to bottom, rgb(var(--c-tile)) 0%, rgb(var(--c-tile) / .6) 45%, rgb(var(--c-tile) / 0) 100%); }
+    @media (min-width: 640px) { #contacts::before { height: 200px; } }
+    #contacts .c-title { color: rgb(var(--c-ink)); transition: color .7s ease; }
+    #contacts .c-sub { color: rgb(var(--c-muted)); transition: color .7s ease; }
+    #contacts .c-card { background: #fff; color: rgb(var(--c-ink)); transition: background-color .7s ease, color .7s ease; }
+    #contacts .c-label { color: rgb(var(--c-muted)); transition: color .7s ease; }
+    #contacts .c-max { background: rgb(var(--c-rose-soft)); transition: background-color .7s ease, box-shadow .7s ease; }
+    #contacts.is-dark .c-title { color: #F6EFE8; }
+    #contacts.is-dark .c-sub { color: #D2BEB3; }
+    #contacts.is-dark .c-card { background: rgba(255,255,255,.07); color: #F6EFE8; }
+    #contacts.is-dark .c-label { color: #CDB9AE; }
+    #contacts.is-dark .c-max { background: rgba(255,255,255,.07); box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); }
+    #contacts.is-dark .c-max .c-body { color: #F6EFE8; }
+    #contacts.is-dark .c-max .c-body-sub { color: #D2BEB3; }
+    #contacts.is-dark .c-max .c-icon { background: rgba(255,255,255,.1); color: #F6EFE8; }
+    #contacts.is-dark .c-max .c-secondary { background: rgba(255,255,255,.1); color: #F6EFE8; }
+    #contacts.is-dark #emailLink { color: rgb(var(--c-rose-light)); }
+    #nav { transition: background-color .5s ease, color .5s ease, box-shadow .3s; }
+    #nav.is-dark { background: rgb(var(--c-ink) / .82); color: #F6EFE8; box-shadow: none; }
+    #nav.is-dark nav { color: rgba(246,239,232,.85); }
+
+    .carousel { scrollbar-width: none; }
+    .carousel-pad { padding-inline: 1.25rem; scroll-padding-inline: 1.25rem; }
+    @media (min-width: 640px) { .carousel-pad { padding-inline: max(1.5rem, calc((100vw - 1180px) / 2 + 1.5rem)); scroll-padding-inline: max(1.5rem, calc((100vw - 1180px) / 2 + 1.5rem)); } }
+    .carousel::-webkit-scrollbar { display: none; }
+    .ba-after { transition: opacity .6s ease; }
+    .ba[data-state="after"] .ba-after { opacity: 1; }
+    .ba[data-state="before"] .ba-after { opacity: 0; }
+    .ba-toggle [data-show][aria-pressed="true"] { background: #fff; color: rgb(var(--c-ink)); box-shadow: 0 1px 4px rgb(var(--c-ink) / .15); }
+
+    .modal { transition: opacity .35s ease, visibility .35s; }
+    .modal[aria-hidden="true"] { opacity: 0; visibility: hidden; }
+    .modal-panel { transition: transform .5s cubic-bezier(.16,1,.3,1); }
+    .modal[aria-hidden="true"] .modal-panel { transform: translateY(48px) scale(.98); }
+    #mobileMenu { transition: opacity .35s ease, visibility .35s; }
+    #mobileMenu[aria-hidden="true"] { opacity: 0; visibility: hidden; }
+    #mobileMenu a { transition: transform .5s cubic-bezier(.16,1,.3,1), opacity .5s; }
+    #mobileMenu[aria-hidden="true"] a { transform: translateY(-8px); opacity: 0; }
+
+    #selectionBar { transition: transform .5s cubic-bezier(.16,1,.3,1); }
+    #selectionBar.is-hidden { transform: translateY(140%); }
+
+    .branch-option:has(input:checked) { box-shadow: 0 0 0 2px rgb(var(--c-rose)); background: #fff; }
+    .branch-option:has(input:focus-visible) { outline: 2px solid rgb(var(--c-rose)); outline-offset: 3px; }
+    .branch-option input:focus-visible { outline: none; }
+
+    .pulse-dot { box-shadow: 0 0 0 0 rgba(52,199,89,.5); animation: pulse 2s infinite; }
+    @keyframes pulse { 70% { box-shadow: 0 0 0 7px rgba(52,199,89,0); } 100% { box-shadow: 0 0 0 0 rgba(52,199,89,0); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal, .word { opacity: 1; transform: none; filter: none; transition: none; animation: none; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body class="font-sans text-[17px] leading-[1.6] sm:text-[18px]">
+
+  <a href="#top" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-white focus:px-4 focus:py-2">К содержимому</a>
+
+  <!-- ============ НАВИГАЦИЯ ============ -->
+  <header id="nav" class="fixed inset-x-0 top-0 z-40 transition-shadow">
+    <div class="mx-auto flex h-16 max-w-[1120px] items-center justify-between px-4 sm:px-6">
+      <a href="#top" class="flex items-center" aria-label="Румяна — на главную">
+        <img src="img/logo-wordmark.png" alt="Румяна" width="188" height="73" class="h-11 w-auto">
+      </a>
+      <nav class="hidden items-center gap-8 text-[15px] text-ink/80 md:flex" aria-label="Основное меню">
+        <a href="#services" class="transition hover:text-rose">Услуги и цены</a>
+        <a href="#branches" class="transition hover:text-rose">Филиалы</a>
+        <a href="#gallery" class="transition hover:text-rose">Работы</a>
+        <a href="#contacts" class="transition hover:text-rose">Контакты</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button type="button" data-open-booking class="rounded-full bg-rose px-5 py-2.5 text-[15px] font-medium text-white transition hover:bg-rose-hover">Записаться</button>
+        <button type="button" id="menuToggle" class="-mr-2 flex h-11 w-11 items-center justify-center md:hidden" aria-label="Открыть меню" aria-controls="mobileMenu" aria-expanded="false">
+          <svg class="h-5 w-5" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 6h14M2 12h14"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobileMenu" class="fixed inset-0 z-50 flex flex-col bg-page/95 backdrop-blur-xl md:hidden" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Меню">
+    <div class="flex h-16 items-center justify-between px-4">
+      <img src="img/logo-wordmark.png" alt="" width="188" height="73" class="h-11 w-auto">
+      <button type="button" id="menuClose" class="-mr-2 flex h-11 w-11 items-center justify-center" aria-label="Закрыть меню">
+        <svg class="h-5 w-5" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 3l12 12M15 3L3 15"/></svg>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-5 px-10 pt-6 text-[28px] font-medium" aria-label="Мобильное меню">
+      <a href="#services" data-close-menu style="transition-delay:.05s">Услуги и цены</a>
+      <a href="#branches" data-close-menu style="transition-delay:.1s">Филиалы</a>
+      <a href="#gallery" data-close-menu style="transition-delay:.15s">Работы</a>
+      <a href="#contacts" data-close-menu style="transition-delay:.2s">Контакты</a>
+    </nav>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="relative isolate overflow-hidden pt-16">
+      <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 hero-glow h-[680px]" aria-hidden="true"></div>
+      <div class="mx-auto max-w-[1024px] px-5 pt-12 text-center sm:pt-20">
+        <p class="text-[13px] font-medium uppercase tracking-[.2em] text-terra sm:text-[14px]"><span class="word" style="animation-delay:.05s">Салон</span> <span class="word" style="animation-delay:.1s">красоты</span> <span class="word" style="animation-delay:.15s">в</span> <span class="word" style="animation-delay:.2s">Улан-Удэ</span></p>
+        <h1 class="headline mt-4 text-[40px] uppercase tracking-[.02em] text-rose sm:text-[80px] lg:text-[96px]">
+          <span class="word" style="animation-delay:.25s">Румяна</span>
+        </h1>
+        <p class="headline mx-auto mt-4 max-w-[720px] text-[20px] leading-snug sm:text-[28px]">
+          <span class="word" style="animation-delay:.4s">Красота,</span> <span class="word" style="animation-delay:.45s">которой</span> <span class="word" style="animation-delay:.5s">хочется</span> <span class="word" style="animation-delay:.55s">улыбаться</span>
+        </p>
+       <div class="reveal d3 mt-9 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
+          <button type="button" data-open-booking class="rounded-full bg-rose px-8 py-4 text-[17px] font-medium text-white btn-shadow transition hover:bg-rose-hover active:scale-[.98]">Записаться</button>
+          <a href="#services" class="group inline-flex min-h-[44px] items-center text-[17px] font-medium text-rose">Услуги и цены <span class="ml-1 inline-block transition-transform group-hover:translate-x-0.5" aria-hidden="true">›</span></a>
+        </div>
+      </div>
+
+      <div class="mx-auto mt-12 max-w-[1180px] px-4 sm:mt-16 sm:px-6">
+        <div id="heroMedia" class="ph ph-2 aspect-[4/5] origin-top overflow-hidden rounded-[36px] will-change-transform sm:aspect-[16/9]" role="img" aria-label="Фото: интерьер салона">
+          <span class="ph-label">Фото салона</span>
+          <div class="absolute bottom-4 left-4 right-4 flex items-center gap-3 rounded-2xl bg-white/85 p-3 pr-5 backdrop-blur-xl sm:bottom-6 sm:left-6 sm:right-auto">
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-rose-soft text-rose" aria-hidden="true">
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.8l2.5 5.2 5.7.8-4.1 4 1 5.7L10 14.8l-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg>
+            </span>
+            <span class="text-left">
+              <span class="block text-[16px] font-semibold leading-tight">4.9 в 2ГИС</span>
+              <span class="block text-[14px] text-muted">960+ оценок гостей</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ВИТРИНА НАПРАВЛЕНИЙ ============ -->
+    <section id="directions" class="py-16 sm:py-24" aria-roledescription="карусель" aria-label="Направления салона">
+      <div class="mx-auto max-w-[1180px] px-4 sm:px-6">
+        <h2 class="reveal headline mb-8 text-center text-[28px] sm:mb-12 sm:text-[48px]">Направления<br>Всё в одном месте</h2>
+
+        <div id="sc" class="reveal sc-bg relative overflow-hidden rounded-[36px] text-ink">
+          <div class="relative z-[1] grid grid-rows-[auto_auto_1fr_auto] p-6 sm:p-10 lg:min-h-[560px] lg:grid-cols-[1fr_1.15fr_.85fr] lg:grid-rows-[auto_1fr_auto] lg:gap-x-6">
+
+            <div class="flex items-center justify-between lg:col-span-3">
+              <p class="text-[14px] font-semibold tabular-nums text-ink/70"><span id="scIndex">01</span> / <span id="scTotal">05</span></p>
+              <div class="flex gap-2">
+                <button type="button" data-sc="-1" class="sc-glass flex h-11 w-11 items-center justify-center rounded-full backdrop-blur transition" aria-label="Предыдущее направление">
+                  <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg>
+                </button>
+                <button type="button" data-sc="1" class="sc-glass flex h-11 w-11 items-center justify-center rounded-full backdrop-blur transition" aria-label="Следующее направление">
+                  <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div id="scText" class="mt-4 lg:row-start-2 lg:mt-0 lg:self-center" aria-live="polite"></div>
+
+            <div id="scStage" class="relative my-2 h-[210px] sm:h-[280px] lg:col-start-2 lg:h-auto lg:row-start-2 lg:my-0 lg:min-h-0"></div>
+
+            <div id="scSide" class="lg:col-start-3 lg:row-start-2 lg:self-center lg:text-right"></div>
+
+            <div class="mt-5 flex items-end justify-between gap-4 lg:col-span-3 lg:row-start-3 lg:mt-4">
+              <div id="scDots" class="flex gap-1.5" role="tablist" aria-label="Выбор направления"></div>
+              <button type="button" id="scThumb" class="group relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full ring-4 ring-white/70 transition hover:scale-105 sm:h-20 sm:w-20" aria-label="Следующее направление"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ЦИФРЫ ============ -->
+    <section class="pb-20 pt-4 sm:pb-28">
+      <div class="mx-auto grid max-w-[1024px] grid-cols-3 gap-4 px-5 text-center">
+        <div class="reveal">
+          <p class="headline whitespace-nowrap text-[32px] text-rose sm:text-[64px]"><span data-count="4.9" data-decimals="1">4.9</span></p>
+          <p class="mt-1 text-[14px] text-muted sm:text-[17px]">рейтинг в 2ГИС</p>
+        </div>
+        <div class="reveal d1">
+          <p class="headline whitespace-nowrap text-[32px] text-rose sm:text-[64px]"><span data-count="2">2</span></p>
+          <p class="mt-1 text-[14px] text-muted sm:text-[17px]">филиала</p>
+        </div>
+        <div class="reveal d2">
+          <p class="headline whitespace-nowrap text-[32px] text-rose sm:text-[64px]"><span id="svcCount" data-count="46">46</span></p>
+          <p class="mt-1 text-[14px] text-muted sm:text-[17px]">услуг в прайсе</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ УСЛУГИ И ЦЕНЫ ============ -->
+    <section id="services" class="bg-tile py-20 sm:py-32">
+      <div class="mx-auto max-w-[1024px] px-5">
+        <h2 class="reveal headline text-center text-[28px] sm:text-[48px]">Услуги и цены<br>Выберите своё</h2>
+
+        <div class="reveal d2 -mx-5 mt-10">
+          <div id="tabs" class="tabs flex gap-2 overflow-x-auto px-5 sm:justify-center" role="tablist" aria-label="Категории услуг"></div>
+        </div>
+
+        <div id="serviceGroups" class="mt-8 grid items-start gap-5 md:grid-cols-2" role="tabpanel"></div>
+
+     </div>
+    </section>
+
+    <!-- ============ ФИЛИАЛЫ ============ -->
+    <section id="branches" class="py-20 sm:py-32">
+      <div class="mx-auto max-w-[1180px] px-4 sm:px-6">
+        <h2 class="reveal headline text-center text-[28px] sm:text-[48px]">Два адреса<br>Одна забота</h2>
+        <div id="branchesGrid" class="mt-12 grid gap-4 sm:mt-16 lg:grid-cols-2 lg:gap-5"></div>
+      </div>
+    </section>
+
+    <!-- ============ РАБОТЫ ============ -->
+    <section id="gallery" class="overflow-hidden bg-tile py-20 sm:py-32">
+      <div class="mx-auto flex max-w-[1180px] items-end justify-between gap-6 px-5 sm:px-6">
+        <h2 class="reveal headline text-[28px] sm:text-[48px]">До и после</h2>
+        <div class="reveal hidden gap-3 sm:flex">
+          <button type="button" data-scroll="-1" class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-ink transition hover:bg-rose-soft hover:text-rose" aria-label="Назад">
+            <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg>
+          </button>
+          <button type="button" data-scroll="1" class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-ink transition hover:bg-rose-soft hover:text-rose" aria-label="Вперёд">
+            <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="carousel" class="carousel mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto carousel-pad scroll-smooth pb-4"></div>
+    </section>
+
+    <!-- ============ КОНТАКТЫ ============ -->
+    <section id="contacts" class="bg-tile pb-20 pt-40 sm:pb-32 sm:pt-56">
+      <div class="mx-auto max-w-[1024px] px-5">
+        <h2 class="reveal headline c-title text-center text-[28px] sm:text-[48px]">Напишите нам<br>Ответим в MAX</h2>
+
+        <div class="mt-12 grid gap-4 sm:mt-16 sm:grid-cols-2">
+          <div class="reveal c-max flex flex-col items-start rounded-[32px] p-7 sm:row-span-2 sm:p-10">
+            <span class="c-icon flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-rose transition-colors" aria-hidden="true">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
+            </span>
+            <h3 class="headline c-body mt-6 text-[24px] text-ink transition-colors sm:text-[30px]">Вопросы — в MAX</h3>
+            <p class="c-body-sub mt-3 text-muted transition-colors">Администратор ответит на вопросы и поможет с записью. Онлайн-запись показывает свободное время сразу.</p>
+            <div class="mt-8 flex flex-wrap gap-3 sm:mt-auto sm:pt-10">
+              <button type="button" data-open-booking class="rounded-full bg-rose px-7 py-3.5 font-medium text-white transition hover:bg-rose-hover">Записаться</button>
+              <a data-max-link target="_blank" rel="noopener" class="c-secondary rounded-full bg-white px-7 py-3.5 font-medium text-ink transition hover:bg-white/70">Открыть чат</a>
+            </div>
+          </div>
+          <div class="reveal d1 c-card rounded-[32px] p-7 sm:p-8">
+            <p class="c-label text-[13px] font-semibold uppercase tracking-[.14em]">Часы работы</p>
+            <p class="headline mt-2 text-[20px]">Ежедневно <span class="whitespace-nowrap">10:00 — 20:00</span></p>
+            <p class="c-label mt-1">По предварительной записи</p>
+          </div>
+          <div class="reveal d2 c-card rounded-[32px] p-7 sm:p-8">
+            <p class="c-label text-[13px] font-semibold uppercase tracking-[.14em]">Почта</p>
+            <a id="emailLink" class="mt-2 block break-all text-[20px] font-semibold text-rose transition hover:text-rose-hover"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-ink pb-28 pt-5 text-[13px] text-[#CDB9AE] sm:pb-10">
+    <div class="mx-auto max-w-[1024px] px-5 pb-6 pt-10">
+      <img src="img/logo.png" alt="Румяна — салон красоты" width="192" height="102" class="h-16 w-auto" loading="lazy">
+    </div>
+    <div class="mx-auto max-w-[1024px] border-t border-white/10 px-5 pt-5">
+      <p>Салон красоты «Румяна» · ул. Балтахинова, 36 · ул. Сахьяновой, 9/19а · Улан-Удэ</p>
+      <p class="mt-2">© <span id="year"></span> Румяна. Рейтинг и цены по данным 2ГИС.</p>
+    </div>
+  </footer>
+
+  <!-- ============ ПАНЕЛЬ ВЫБРАННЫХ УСЛУГ ============ -->
+  <div id="selectionBar" class="is-hidden fixed inset-x-0 bottom-0 z-30 p-3 sm:p-5" aria-live="polite">
+    <div class="mx-auto flex max-w-[560px] items-center justify-between gap-3 rounded-full bg-white/85 py-2 pl-5 pr-2 shadow-[0_10px_40px_-10px_rgba(59,47,44,.3)] ring-1 ring-ink/5 backdrop-blur-xl">
+      <p id="selCount" class="min-w-0 truncate text-[16px]"></p>
+      <button type="button" data-open-booking class="shrink-0 rounded-full bg-rose px-6 py-3 text-[16px] font-medium text-white transition hover:bg-rose-hover">Записаться</button>
+    </div>
+  </div>
+
+  <!-- ============ ЗАПИСЬ ============ -->
+  <div id="bookingModal" class="modal fixed inset-0 z-50 flex items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-6" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+    <div class="modal-panel relative flex max-h-[94vh] w-full max-w-[640px] flex-col overflow-hidden rounded-t-[28px] bg-page sm:rounded-[28px]">
+      <div class="flex items-center justify-between gap-4 px-6 pb-2 pt-5 sm:px-8 sm:pt-7">
+        <div class="min-w-0">
+          <p class="text-[13px] font-semibold text-rose">Шаг <span id="stepNum">1</span> из 2</p>
+          <h3 id="bookingTitle" class="headline truncate text-[20px] sm:text-[24px]">Выберите филиал</h3>
+        </div>
+        <button type="button" data-close-booking class="-mr-2 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-tile text-muted transition hover:text-ink" aria-label="Закрыть">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg>
+        </button>
+      </div>
+
+      <div id="step1" class="overflow-y-auto px-6 pb-6 pt-3 sm:px-8 sm:pb-8">
+        <fieldset>
+          <legend class="sr-only">Филиал</legend>
+          <div id="branchOptions" class="grid gap-3"></div>
+        </fieldset>
+
+        <div class="mt-5 rounded-2xl bg-tile p-4">
+          <div class="flex items-baseline justify-between gap-3">
+            <p class="text-[13px] font-semibold text-muted">Выбранные услуги</p>
+            <p id="bookingTotal" class="text-[13px] font-semibold"></p>
+          </div>
+          <ul id="bookingServices" class="mt-2 space-y-1.5 text-[15px]"></ul>
+          <p id="bookingEmpty" class="mt-1 text-[15px] text-muted">Пока ничего — можно <a href="#services" data-close-booking class="text-rose">выбрать в списке услуг</a> или уточнить у администратора.</p>
+        </div>
+
+        <button type="button" id="toStep2" class="mt-6 w-full rounded-full bg-rose py-3.5 text-[17px] text-white transition hover:bg-rose-hover disabled:cursor-not-allowed disabled:opacity-40" disabled>Продолжить</button>
+      </div>
+
+      <div id="step2Widget" class="hidden flex-1 flex-col">
+        <div class="flex items-center justify-between gap-3 px-6 py-2 text-[15px] sm:px-8">
+          <button type="button" id="widgetBack" class="inline-flex min-h-[44px] shrink-0 items-center whitespace-nowrap text-rose">‹ Филиал</button>
+          <span id="widgetBranch" class="truncate text-muted"></span>
+          <a id="widgetNewTab" target="_blank" rel="noopener" class="shrink-0 whitespace-nowrap text-rose">Открыть отдельно</a>
+        </div>
+        <iframe id="yclientsFrame" title="Онлайн-запись" class="block h-[70vh] w-full shrink-0 border-0 bg-white"></iframe>
+      </div>
+
+      <div id="step2Multi" class="hidden overflow-y-auto px-6 pb-6 pt-3 sm:px-8 sm:pb-8">
+        <button type="button" data-back class="inline-flex min-h-[44px] items-center text-[15px] text-rose">‹ Филиал</button>
+        <p class="mt-1 text-[16px] text-muted">Эти услуги делают разные мастера, поэтому записей будет несколько. Выберите мастера и время для каждой по очереди — все записи попадут в онлайн-запись салона.</p>
+        <ol id="visitList" class="mt-5 grid gap-3"></ol>
+      </div>
+
+      <div id="step2Offline" class="hidden overflow-y-auto px-6 pb-6 pt-3 sm:px-8 sm:pb-8">
+        <button type="button" data-back class="inline-flex min-h-[44px] items-center text-[15px] text-rose">‹ Филиал</button>
+        <div class="mt-2 rounded-2xl bg-tile p-5">
+          <p id="offlineBranch" class="text-[17px] font-semibold"></p>
+          <p class="mt-2 text-muted">Онлайн-запись в этот филиал пока не подключена. Напишите администратору — он подберёт свободное время.</p>
+        </div>
+        <a data-max-link target="_blank" rel="noopener" class="mt-6 block w-full rounded-full bg-rose py-3.5 text-center text-[17px] font-medium text-white transition hover:bg-rose-hover">Написать в MAX</a>
+      </div>    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* =====================================================================
+         НАСТРОЙКИ САЛОНА
+         maxUrl       — чат салона в MAX (вопросы и запись в филиал без онлайн-записи).
+         yclientsUrl  — адрес онлайн-записи филиала в YClients (без «/personal/…»).
+                        Запись идёт сразу в YClients, клиент видит только свободное время.
+                        Если пусто — вместо записи предлагается написать в MAX.
+         ===================================================================== */
+      var SALON = {
+        maxUrl: 'https://max.ru/u/f9LHodD0cOL3z-z6EY-4YDrRqJNqPlB7JmMjj9pPM98FmXBRdsk9rrdwMUo',
+        email: 'roomyanateam@mail.ru'
+      };
+
+      var BRANCHES = [
+        {
+          id: 'baltakhinova',
+          address: 'ул. Балтахинова, 36',
+          details: 'Офис 302, 3 этаж · Советский район',
+          hours: 'Ежедневно 10:00 — 20:00',
+          open: 600, close: 1200,
+          rating: '4.9', reviews: '962 оценки',
+          map: 'https://2gis.ru/ulanude/firm/70000001045415485',
+          yclientsUrl: 'https://n403815.yclients.com/company/383057', yc: 0,
+          tone: 'ph-1', card: 'bg-tile'
+        },
+        {
+          id: 'sakhyanovoy',
+          address: 'ул. Сахьяновой, 9/19а',
+          details: 'Октябрьский район',
+          hours: 'Ежедневно 10:00 — 20:00',
+          open: 600, close: 1200,
+          rating: '4.9', reviews: '700+ оценок',
+          map: 'https://2gis.ru/ulanude/geo/5207922724334030',
+          yclientsUrl: 'https://n1039465.yclients.com/company/963248', yc: 1,
+          tone: 'ph-4', card: 'bg-rose-soft'
+        }
+      ];
+
+      /* Прайс салона из 2ГИС (вкладка «Цены»), сверено 2026-09-29.
+         min — минимальная цена для подсчёта итога; два последних числа — id услуги в YClients
+         филиалов Балтахинова и Сахьяновой (0 — точной пары нет, услугу выберут в форме YClients). */
+      var SERVICES = {
+        nails: { title: 'Ногти', groups: [
+          { title: 'Маникюр', items: [
+            ['n1', 'Маникюр без покрытия', '1 500 ₽', 1500, 6962460, 17883394],
+            ['n2', 'Маникюр с однотонным покрытием', '2 200–2 300 ₽', 2200, 6962461, 14966727],
+            ['n3', 'Японский маникюр', '1 900 ₽', 1900, 19759883, 14966782],
+            ['n4', 'Мужской маникюр', '1 700 ₽', 1700, 6962462, 24775791],
+            ['n5', 'Наращивание ногтей 1-3 длина', '3 000 ₽', 3000, 6962463, 14966744],
+            ['n6', 'Наращивание ногтей 4-6 длина', '3 500 ₽', 3500, 26660848, 26712283],
+            ['n7', 'Наращивание ногтей', '4 000 ₽', 4000, 0, 26712284],
+            ['n8', 'Укрепление полигелем', '300 ₽', 300, 7668586, 0],
+            ['n9', 'Восстановление архитектуры ногтей', '500 ₽', 500, 27025551, 0],
+            ['n10', 'Френч/втирка/кошачий глаз', '300 ₽', 300, 27025560, 0],
+            ['n11', 'СПА для рук', '300 ₽', 300, 15219971, 17715698]
+          ] },
+          { title: 'Педикюр', items: [
+            ['p1', 'SMART-педикюр (обработка стоп+пальцев) без покрытия', '2 600 ₽', 2600, 6094285, 17966956],
+            ['p2', 'SMART-педикюр (обработка стоп+пальцев) с покрытием', '3 100 ₽', 3100, 6094298, 18395375],
+            ['p3', 'Педикюр (обработка пальцев) без покрытия', '1 900 ₽', 1900, 6203219, 15857525],
+            ['p4', 'Педикюр (обработка пальцев) с покрытием', '2 600 ₽', 2600, 6113591, 14976420],
+            ['p5', 'Снятие чужого покрытия с последующим педикюром', '300 ₽', 300, 29905524, 0],
+            ['p6', 'Снятие чужого покрытия без последующего педикюра', '500 ₽', 500, 8211438, 16635478],
+            ['p7', 'СПА для ног', '500 ₽', 500, 15242716, 15914518]
+          ] }
+        ] },
+        brows: { title: 'Брови', groups: [
+          { title: 'Брови', items: [
+            ['b1', 'Коррекция бровей', '1 000 ₽', 1000, 11432196, 14972393],
+            ['b2', 'Окрашивание бровей (без коррекции)', '1 000 ₽', 1000, 11462490, 18318789],
+            ['b3', 'Долговременная укладка (без коррекции)', '1 000 ₽', 1000, 11462489, 18318767],
+            ['b4', 'Коррекция и окрашивание бровей', '1 500 ₽', 1500, 11432194, 14972399],
+            ['b5', 'Коррекция и осветление бровей', '1 500 ₽', 1500, 18799739, 24774891],
+            ['b6', 'Коррекция и долговременная укладка бровей', '1 800 ₽', 1800, 11432197, 14972404],
+            ['b7', 'Комплекс (коррекция, окрашивание, долговременная укладка бровей)', '2 300 ₽', 2300, 11432198, 14972407],
+            ['b8', 'Суперкомплекс (коррекция, окрашивание, долговременная укладка, счастье для бровей)', '2 500 ₽', 2500, 11432195, 30379422],
+            ['b9', 'Счастье для бровей', '500 ₽', 500, 11432199, 19308438],
+            ['b10', 'Удаление пушка над верхней губой', '450 ₽', 450, 11432237, 14972411]
+          ] }
+        ] },
+        lashes: { title: 'Ресницы', groups: [
+          { title: 'Наращивание ресниц', items: [
+            ['l1', 'Наращивание ресниц (классика)', '2 200 ₽', 2200, 6103193, 15429450],
+            ['l2', 'Наращивание ресниц (1,5-2Д)', '2 500 ₽', 2500, 6103203, 15429474],
+            ['l3', 'Наращивание ресниц (3Д)', '2 800 ₽', 2800, 6103215, 21205935],
+            ['l4', 'Лучи/мокрый эффекты', '300 ₽', 300, 0, 14966838],
+            ['l5', 'Снятие чужой работы', '300 ₽', 300, 0, 14966853]
+          ] },
+          { title: 'LED-наращивание ресниц', items: [
+            ['l6', 'LED-наращивание ресниц (классика)', '2 600 ₽', 2600, 27802527, 29296863],
+            ['l7', 'LED-наращивание ресниц (1,5-2Д)', '3 000 ₽', 3000, 27802854, 29296878]
+          ] },
+          { title: 'Ламинирование ресниц', items: [
+            ['l8', 'Ламинирование ресниц (без окрашивания)', '1 800–1 900 ₽', 1800, 21930645, 19308450],
+            ['l9', 'Ламинирование ресниц с окрашиванием', '1 900–2 000 ₽', 1900, 0, 19308465],
+            ['l10', 'Ламинирование ресниц (с окрашиванием+молекулярный ботокс)', '2 200 ₽', 2200, 6103290, 14966859]
+          ] }
+        ] },
+        makeup: { title: 'Макияж', groups: [
+          { title: 'Макияж', items: [
+            ['m1', 'Дневной макияж', '2 500 ₽', 2500, 6094323, 19497425],
+            ['m2', 'Вечерний макияж', '2 500 ₽', 2500, 6094328, 19497431],
+            ['m3', 'Свадебный макияж', '2 500 ₽', 2500, 10411957, 0],
+            ['m4', 'Репетиция свадебного макияжа', '2 000 ₽', 2000, 10412007, 0]
+          ] }
+        ] },
+        styling: { title: 'Укладки', groups: [
+          { title: 'Укладки', items: [
+            ['s1', 'Укладка на короткие волосы', '1 400–1 600 ₽', 1400, 6094346, 21497313],
+            ['s2', 'Выпрямление утюгом', '1 200–2 000 ₽', 1200, 6094496, 21497321],
+            ['s3', 'Локоны', '1 500–3 500 ₽', 1500, 6094500, 0],
+            ['s4', 'Прическа со сборкой', '1 800–3 500 ₽', 1800, 6094507, 19553863]
+          ] }
+        ] }
+      };
+
+      /* Витрина: мягкий пастельный цвет слайда, короткое описание и главные услуги (все — из прайса). */
+      var SHOWCASE = [
+        { cat: 'nails', title: 'Ногти', line: 'Маникюр, педикюр и наращивание — от классики до японского маникюра.', from: 'от 1 500 ₽', chips: [['n3', 'Японский маникюр'], ['n2', 'Маникюр с покрытием'], ['p2', 'SMART-педикюр с покрытием']], bg: '#F4D6DF', icon: 'polish' },
+        { cat: 'brows', title: 'Брови', line: 'Коррекция, окрашивание и долговременная укладка.', from: 'от 1 000 ₽', chips: [['b1', 'Коррекция'], ['b7', 'Комплекс'], ['b8', 'Суперкомплекс']], bg: '#F1DFD4', icon: 'brows' },
+        { cat: 'lashes', title: 'Ресницы', line: 'Наращивание, LED-наращивание и ламинирование.', from: 'от 1 800 ₽', chips: [['l1', 'Наращивание, классика'], ['l6', 'LED, классика'], ['l9', 'Ламинирование с окрашиванием']], bg: '#F9DEDA', icon: 'lashes' },
+        { cat: 'makeup', title: 'Макияж', line: 'Дневной, вечерний и свадебный, есть репетиция свадебного.', from: 'от 2 000 ₽', chips: [['m1', 'Дневной'], ['m2', 'Вечерний'], ['m3', 'Свадебный']], bg: '#EFCCD6', icon: 'lipstick' },
+        { cat: 'styling', title: 'Укладки', line: 'Локоны, выпрямление и причёски со сборкой.', from: 'от 1 200 ₽', chips: [['s3', 'Локоны'], ['s2', 'Выпрямление'], ['s4', 'Прическа со сборкой']], bg: '#EFE3D9', icon: 'comb' }
+      ];
+
+      var ICONS = {
+        polish: '<rect x="48" y="14" width="24" height="32" rx="5"/><rect x="43" y="46" width="34" height="9" rx="3"/><rect x="30" y="55" width="60" height="52" rx="16"/><path d="M42 68v22" opacity=".6"/>',
+        brows: '<path d="M16 56c10-14 26-18 40-8" stroke-width="6"/><path d="M64 48c14-10 30-6 40 8" stroke-width="6"/><path d="M26 80c8-6 18-6 26 0M68 80c8-6 18-6 26 0" opacity=".6"/>',
+        lashes: '<path d="M18 54c24 30 60 30 84 0"/><path d="M30 64l-6 12M42 70l-4 13M54 73l-1 14M66 73l1 14M78 70l4 13M90 64l6 12"/>',
+        lipstick: '<rect x="40" y="66" width="40" height="42" rx="5"/><rect x="45" y="50" width="30" height="16" rx="3"/><path d="M48 50V28c0-6 6-12 14-14 6-1 10 3 10 8v28"/>',
+        comb: '<rect x="20" y="36" width="80" height="16" rx="6"/><path d="M28 52v26M38 52v26M48 52v26M58 52v26M68 52v26M78 52v26M88 52v26"/><path d="M18 96c14-8 28 8 42 0s28-8 42 0" opacity=".6"/>'
+      };
+
+      var WORKS = [
+        { title: 'Японский маникюр', cat: 'Ногти', a: 'ph-4', b: 'ph-3' },
+        { title: 'Коррекция и окрашивание бровей', cat: 'Брови', a: 'ph-2', b: 'ph-1' },
+        { title: 'Наращивание ресниц 1,5-2Д', cat: 'Ресницы', a: 'ph-4', b: 'ph-3' },
+        { title: 'Вечерний макияж', cat: 'Макияж', a: 'ph-2', b: 'ph-1' },
+        { title: 'Локоны', cat: 'Укладки', a: 'ph-4', b: 'ph-3' },
+        { title: 'SMART-педикюр', cat: 'Ногти', a: 'ph-2', b: 'ph-1' }
+      ];
+
+      /* ---------- Утилиты ---------- */
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function $(sel, root) { return (root || document).querySelector(sel); }
+      function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+      function pad(n) { return (n < 10 ? '0' : '') + n; }
+      function clamp(v) { return Math.max(0, Math.min(1, v)); }
+      function rub(n) { return n.toLocaleString('ru-RU') + ' ₽'; }
+      function plural(n, f) { var a = n % 10, b = n % 100; return a === 1 && b !== 11 ? f[0] : a >= 2 && a <= 4 && (b < 10 || b >= 20) ? f[1] : f[2]; }
+
+      var INDEX = {};
+      Object.keys(SERVICES).forEach(function (cat) {
+        SERVICES[cat].groups.forEach(function (g) {
+          g.items.forEach(function (it) { INDEX[it[0]] = { id: it[0], name: it[1], price: it[2], min: it[3], yc: [it[4] || 0, it[5] || 0], cat: cat, group: g.title }; });
+        });
+      });
+      function svc(id) { return INDEX[id]; }
+      $('#svcCount').dataset.count = Object.keys(INDEX).length;
+      function branchById(id) { return BRANCHES.filter(function (b) { return b.id === id; })[0]; }
+      function ulanUdeNow() { var n = new Date(); return new Date(n.getTime() + (n.getTimezoneOffset() + 480) * 60000); }
+      function openStatus(b) {
+        var t = ulanUdeNow(), m = t.getHours() * 60 + t.getMinutes();
+        return m >= b.open && m < b.close
+          ? { open: true, text: 'Открыто до ' + pad(b.close / 60) + ':00' }
+          : { open: false, text: 'Закрыто · откроемся в ' + pad(b.open / 60) + ':00' };
+      }
+      function statusHtml(b) {
+        var s = openStatus(b);
+        return '<span class="inline-flex items-center gap-1.5"><span class="h-2 w-2 rounded-full ' + (s.open ? 'pulse-dot bg-[#34C759]' : 'bg-line') + '"></span>' + s.text + '</span>';
+      }
+      function iconSvg(name, cls) {
+        return '<svg class="' + cls + '" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICONS[name] + '</svg>';
+      }
+
+      var selected = [];
+      var chosenBranch = null;
+
+      $all('[data-max-link]').forEach(function (a) { a.href = SALON.maxUrl; });
+      $('#emailLink').href = 'mailto:' + SALON.email;
+      $('#emailLink').textContent = SALON.email;
+      $('#year').textContent = new Date().getFullYear();
+
+      /* =====================================================================
+         ВИТРИНА НАПРАВЛЕНИЙ (слайдер: главный объект прилетает из миниатюры)
+         ===================================================================== */
+      var sc = $('#sc'), stage = $('#scStage'), scIndex = 0, scTimer = null, scVisible = false, scHover = false;
+      var SC_DUR = 5500;
+      sc.style.setProperty('--sc-dur', SC_DUR + 'ms');
+      $('#scTotal').textContent = pad(SHOWCASE.length);
+
+      stage.innerHTML = SHOWCASE.map(function (s, i) {
+        return '<div class="sc-visual' + (i === 0 ? ' is-active' : '') + '" data-i="' + i + '" aria-hidden="' + (i === 0 ? 'false' : 'true') + '">' +
+          '<div class="sc-orb">' + iconSvg(s.icon, 'h-[46%] w-[46%] text-rose') + '</div>' +
+          '<span class="sc-shadow"></span></div>';
+      }).join('');
+
+      $('#scDots').innerHTML = SHOWCASE.map(function (s, i) {
+        return '<button type="button" role="tab" data-go="' + i + '" class="sc-dot h-1.5 w-7 rounded-full bg-white/60 text-rose sm:w-10" aria-label="' + s.title + '"><span></span></button>';
+      }).join('');
+
+      function chipHtml(id, label) {
+        var on = selected.indexOf(id) !== -1;
+        return '<button type="button" data-add="' + id + '" aria-pressed="' + on + '" title="' + svc(id).name + ' — ' + svc(id).price + '" ' +
+          'class="sc-chip sc-glass inline-flex min-h-[44px] items-center gap-2 rounded-full py-2 pl-4 pr-2 text-[14px] backdrop-blur transition active:scale-[.97]">' +
+            '<span class="text-left leading-tight">' + label + '</span><span class="whitespace-nowrap text-muted">' + svc(id).price + '</span>' +
+            '<span class="sc-chip-icon flex h-6 w-6 items-center justify-center rounded-full bg-white text-rose" aria-hidden="true">' +
+              '<svg class="h-2.5 w-2.5" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 1v12M1 7h12"/></svg>' +
+            '</span>' +
+            '<span class="sr-only">' + (on ? 'Убрать из записи' : 'Добавить в запись') + '</span>' +
+          '</button>';
+      }
+
+      function renderScText(i) {
+        var s = SHOWCASE[i];
+        $('#scText').innerHTML =
+          '<div class="sc-text">' +
+            '<h3 class="headline text-[34px] sm:text-[52px]">' + s.title + '</h3>' +
+            '<p class="mt-2 max-w-[340px] text-[16px] text-ink/80 sm:mt-3 sm:text-[18px]">' + s.line + '</p>' +
+            '<div class="mt-6 hidden flex-wrap items-center gap-x-5 gap-y-3 lg:flex">' +
+              '<button type="button" data-open-booking-sc class="inline-flex items-center gap-2 rounded-full bg-rose px-6 py-3 text-[16px] font-medium text-white transition hover:bg-rose-hover">Записаться <span aria-hidden="true">›</span></button>' +
+              '<a href="#services" data-cat="' + s.cat + '" class="text-[16px] font-medium text-rose hover:text-rose-hover">Все цены ›</a>' +
+            '</div>' +
+          '</div>';
+        $('#scSide').innerHTML =
+          '<div class="sc-text" style="animation-delay:.08s">' +
+            '<p class="text-[14px] text-ink/70">Стоимость</p>' +
+            '<p class="headline text-[26px] sm:text-[38px]">' + s.from + '</p>' +
+            '<p class="mt-4 text-[14px] text-ink/70 sm:mt-5">Популярное — добавьте в запись</p>' +
+            '<div class="mt-2 flex flex-wrap gap-2 lg:justify-end">' +
+              s.chips.map(function (c) { return chipHtml(c[0], c[1]); }).join('') +
+            '</div>' +
+            '<div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 lg:hidden">' +
+              '<button type="button" data-open-booking-sc class="inline-flex items-center gap-2 rounded-full bg-rose px-6 py-3 text-[16px] font-medium text-white">Записаться <span aria-hidden="true">›</span></button>' +
+              '<a href="#services" data-cat="' + s.cat + '" class="inline-flex min-h-[44px] items-center text-[16px] font-medium text-rose">Все цены ›</a>' +
+            '</div>' +
+          '</div>';
+      }
+
+      function renderScChrome(i) {
+        var s = SHOWCASE[i], next = SHOWCASE[(i + 1) % SHOWCASE.length];
+        sc.style.backgroundColor = s.bg;
+        $('#scIndex').textContent = pad(i + 1);
+        $all('.sc-dot', sc).forEach(function (d, k) {
+          d.classList.remove('is-active');
+          d.setAttribute('aria-selected', k === i ? 'true' : 'false');
+        });
+        var dot = $('[data-go="' + i + '"]', sc);
+        void dot.offsetWidth;
+        dot.classList.add('is-active');
+        var thumb = $('#scThumb');
+        thumb.style.backgroundColor = next.bg;
+        thumb.setAttribute('aria-label', 'Следующее: ' + next.title);
+        thumb.innerHTML = iconSvg(next.icon, 'h-8 w-8 text-rose transition-transform group-hover:scale-110 sm:h-10 sm:w-10');
+      }
+
+      function goTo(i, dir) {
+        var n = SHOWCASE.length;
+        i = (i + n) % n;
+        if (i === scIndex) return;
+        dir = dir || (i > scIndex ? 1 : -1);
+        var cur = $('.sc-visual[data-i="' + scIndex + '"]', stage);
+        var nxt = $('.sc-visual[data-i="' + i + '"]', stage);
+
+        $all('.sc-visual', stage).forEach(function (v) { if (v !== cur && v !== nxt) { v.classList.add('no-anim'); v.classList.remove('is-active', 'is-prev'); } });
+        nxt.classList.add('no-anim');
+        nxt.classList.remove('is-active', 'is-prev');
+        if (dir < 0) nxt.classList.add('is-prev');
+        void nxt.offsetWidth;
+        nxt.classList.remove('no-anim');
+        $all('.sc-visual', stage).forEach(function (v) { v.classList.remove('no-anim'); });
+
+        cur.classList.remove('is-active');
+        if (dir > 0) cur.classList.add('is-prev');
+        cur.setAttribute('aria-hidden', 'true');
+        nxt.classList.remove('is-prev');
+        nxt.classList.add('is-active');
+        nxt.setAttribute('aria-hidden', 'false');
+
+        scIndex = i;
+        renderScText(i);
+        renderScChrome(i);
+        restartTimer();
+      }
+
+      function restartTimer() {
+        clearTimeout(scTimer);
+        if (reduceMotion || !scVisible || scHover || document.hidden) { sc.classList.add('is-paused'); return; }
+        sc.classList.remove('is-paused');
+        scTimer = setTimeout(function () { goTo(scIndex + 1, 1); }, SC_DUR);
+      }
+
+      sc.addEventListener('click', function (e) {
+        var step = e.target.closest('[data-sc]');
+        if (step) return goTo(scIndex + Number(step.dataset.sc), Number(step.dataset.sc));
+        var dot = e.target.closest('[data-go]');
+        if (dot) return goTo(Number(dot.dataset.go));
+        if (e.target.closest('#scThumb')) return goTo(scIndex + 1, 1);
+        if (e.target.closest('[data-open-booking-sc]')) return openBooking();
+        var add = e.target.closest('[data-add]');
+        if (add) return toggleService(add.dataset.add);
+        var cat = e.target.closest('[data-cat]');
+        if (cat) setTab(cat.dataset.cat);
+      });
+      sc.addEventListener('mouseenter', function () { scHover = true; restartTimer(); });
+      sc.addEventListener('mouseleave', function () { scHover = false; restartTimer(); });
+      sc.addEventListener('focusin', function () { scHover = true; restartTimer(); });
+      sc.addEventListener('focusout', function () { scHover = false; restartTimer(); });
+      document.addEventListener('visibilitychange', restartTimer);
+
+      var touchX = null;
+      sc.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse') touchX = e.clientX; });
+      sc.addEventListener('pointerup', function (e) {
+        if (touchX === null) return;
+        var dx = e.clientX - touchX; touchX = null;
+        if (Math.abs(dx) > 40) goTo(scIndex + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+      });
+      sc.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') goTo(scIndex + 1, 1);
+        if (e.key === 'ArrowLeft') goTo(scIndex - 1, -1);
+      });
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (en) { scVisible = en[0].isIntersecting; restartTimer(); }, { threshold: 0.4 }).observe(sc);
+      }
+
+      renderScText(0);
+      renderScChrome(0);
+
+      /* =====================================================================
+         УСЛУГИ И ЦЕНЫ
+         ===================================================================== */
+      var tabs = $('#tabs'), currentTab = 'nails';
+
+      Object.keys(SERVICES).forEach(function (key) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'tab-btn shrink-0 rounded-full bg-white px-5 py-2.5 text-[15px] font-medium text-ink transition-colors';
+        b.setAttribute('role', 'tab');
+        b.setAttribute('aria-selected', key === currentTab ? 'true' : 'false');
+        b.dataset.tab = key;
+        b.textContent = SERVICES[key].title;
+        b.addEventListener('click', function () { setTab(key); });
+        tabs.appendChild(b);
+      });
+
+      tabs.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        var keys = Object.keys(SERVICES);
+        var i = (keys.indexOf(currentTab) + (e.key === 'ArrowRight' ? 1 : -1) + keys.length) % keys.length;
+        setTab(keys[i]);
+        $('[data-tab="' + keys[i] + '"]', tabs).focus();
+      });
+
+      function setTab(key) {
+        currentTab = key;
+        $all('.tab-btn', tabs).forEach(function (b) { b.setAttribute('aria-selected', b.dataset.tab === key ? 'true' : 'false'); });
+        var active = $('[data-tab="' + key + '"]', tabs);
+        tabs.scrollTo({ left: active.offsetLeft - (tabs.clientWidth - active.offsetWidth) / 2, behavior: reduceMotion ? 'auto' : 'smooth' });
+        renderServices(true);
+      }
+
+      function renderServices(animate) {
+        $('#serviceGroups').innerHTML = SERVICES[currentTab].groups.map(function (g, gi) {
+          return (
+            '<div class="' + (animate ? 'fade-in ' : '') + 'overflow-hidden rounded-[28px] bg-white" style="animation-delay:' + (gi * 0.06) + 's">' +
+              '<h3 class="headline px-5 pb-2 pt-6 text-[20px] sm:px-6">' + g.title + '</h3>' +
+              '<ul>' + g.items.map(function (it) {
+                var on = selected.indexOf(it[0]) !== -1;
+                return '<li class="border-t border-line/70 first:border-t-0">' +
+                  '<button type="button" data-select="' + it[0] + '" aria-pressed="' + on + '" class="svc-row flex min-h-[56px] w-full items-center gap-4 px-5 py-3.5 text-left transition hover:bg-tile/60 active:bg-tile sm:px-6">' +
+                    '<span class="svc-name min-w-0 flex-1 text-[16px] leading-snug transition-colors">' + it[1] + '</span>' +
+                    '<span class="shrink-0 whitespace-nowrap text-[16px] font-medium tabular-nums">' + it[2] + '</span>' +
+                    '<span class="plus flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-rose-soft text-rose" aria-hidden="true">' +
+                      '<svg class="h-3 w-3" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 1v12M1 7h12"/></svg>' +
+                    '</span>' +
+                    '<span class="sr-only">' + (on ? 'Убрать из записи' : 'Добавить в запись') + '</span>' +
+                  '</button></li>';
+              }).join('') + '</ul>' +
+            '</div>'
+          );
+        }).join('');
+      }
+
+      $('#serviceGroups').addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-select]');
+        if (btn) toggleService(btn.dataset.select);
+      });
+
+      function toggleService(id) {
+        var i = selected.indexOf(id);
+        if (i === -1) selected.push(id); else selected.splice(i, 1);
+        var on = selected.indexOf(id) !== -1;
+        $all('[data-select="' + id + '"], [data-add="' + id + '"]').forEach(function (el) {
+          el.setAttribute('aria-pressed', on);
+          $('.sr-only', el).textContent = on ? 'Убрать из записи' : 'Добавить в запись';
+        });
+        updateSelection();
+      }
+
+      function totalMin() { return selected.reduce(function (s, id) { return s + svc(id).min; }, 0); }
+
+      function updateSelection() {
+        var n = selected.length;
+        $('#selectionBar').classList.toggle('is-hidden', n === 0);
+        $('#selCount').innerHTML = '<span class="font-semibold">' + n + ' ' + plural(n, ['услуга', 'услуги', 'услуг']) + '</span>' +
+          '<span class="text-muted"> · от ' + rub(totalMin()) + '</span>';
+        renderBookingServices();
+      }
+
+      /* =====================================================================
+         ФИЛИАЛЫ
+         ===================================================================== */
+      $('#branchesGrid').innerHTML = BRANCHES.map(function (b, i) {
+        var sub = 'text-muted';
+        return (
+          '<article class="reveal ' + (i ? 'd1 ' : '') + 'group flex flex-col overflow-hidden rounded-[32px] ' + b.card + '">' +
+            '<div class="px-7 pt-8 text-center sm:px-10 sm:pt-12">' +
+              '<p class="text-[15px] font-semibold text-rose">★ ' + b.rating + (b.reviews ? ' · ' + b.reviews : '') + ' в 2ГИС</p>' +
+              '<h3 class="headline mt-2 text-[22px] sm:text-[30px]">' + b.address + '</h3>' +
+              '<p class="mt-2 text-[16px] ' + sub + '">' + b.details + '</p>' +
+              '<p class="mt-1 text-[16px] ' + sub + '">' + b.hours + '</p>' +
+              '<p class="mt-1 text-[16px] ' + sub + '">' + statusHtml(b) + '</p>' +
+              '<div class="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">' +
+                '<button type="button" data-book-branch="' + b.id + '" class="rounded-full bg-rose px-7 py-3 text-[16px] font-medium text-white transition hover:bg-rose-hover">Записаться сюда</button>' +
+                '<a href="' + b.map + '" target="_blank" rel="noopener" class="inline-flex min-h-[44px] items-center text-[16px] font-medium text-rose">Маршрут в 2ГИС ›</a>' +
+              '</div>' +
+            '</div>' +
+            '<div class="relative mt-8 px-6 sm:mt-10 sm:px-10">' +
+              '<div class="ph ' + b.tone + ' aspect-[16/10] rounded-t-[20px] transition-transform duration-700 ease-out group-hover:scale-[1.02]" role="img" aria-label="Фото филиала: ' + b.address + '">' +
+                '<span class="ph-label">Фото филиала</span>' +
+              '</div>' +
+            '</div>' +
+          '</article>'
+        );
+      }).join('');
+
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-book-branch]');
+        if (btn) openBooking(btn.dataset.bookBranch);
+      });
+
+      /* =====================================================================
+         РАБОТЫ
+         ===================================================================== */
+      var carousel = $('#carousel');
+      carousel.innerHTML = WORKS.map(function (w) {
+        return (
+          '<figure class="reveal w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[31%]">' +
+            '<div class="ba relative aspect-[4/5] overflow-hidden rounded-[28px]" data-state="after">' +
+              '<div class="ph ' + w.a + ' absolute inset-0" role="img" aria-label="До: ' + w.title + '"><span class="ph-label">Фото «до»</span></div>' +
+              '<div class="ba-after ph ' + w.b + ' absolute inset-0" role="img" aria-label="После: ' + w.title + '"><span class="ph-label">Фото «после»</span></div>' +
+              '<div class="ba-toggle absolute bottom-4 left-1/2 flex -translate-x-1/2 rounded-full bg-black/10 p-1 text-[13px] font-medium text-ink/70 backdrop-blur-xl">' +
+                '<button type="button" data-show="before" aria-pressed="false" class="rounded-full px-4 py-1.5 transition">До</button>' +
+                '<button type="button" data-show="after" aria-pressed="true" class="rounded-full px-4 py-1.5 transition">После</button>' +
+              '</div>' +
+            '</div>' +
+            '<figcaption class="mt-4 px-1">' +
+              '<span class="block text-[13px] font-semibold uppercase tracking-[.14em] text-rose">' + w.cat + '</span>' +
+              '<span class="headline mt-1 block text-[18px]">' + w.title + '</span>' +
+            '</figcaption>' +
+          '</figure>'
+        );
+      }).join('');
+
+      carousel.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-show]');
+        if (!btn) return;
+        var ba = btn.closest('.ba');
+        ba.dataset.state = btn.dataset.show;
+        $all('[data-show]', ba).forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      });
+
+      $all('[data-scroll]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          carousel.scrollBy({ left: Number(b.dataset.scroll) * carousel.clientWidth * 0.8, behavior: reduceMotion ? 'auto' : 'smooth' });
+        });
+      });
+
+      /* =====================================================================
+         МЕНЮ, ПРОКРУТКА, ПОЯВЛЕНИЕ
+         ===================================================================== */
+      var nav = $('#nav'), menu = $('#mobileMenu'), menuToggle = $('#menuToggle');
+      function setMenu(open) {
+        menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+        menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      menuToggle.addEventListener('click', function () { setMenu(true); });
+      $('#menuClose').addEventListener('click', function () { setMenu(false); });
+      $all('[data-close-menu]').forEach(function (el) { el.addEventListener('click', function () { setMenu(false); }); });
+
+      var heroMedia = $('#heroMedia'), contacts = $('#contacts'), ticking = false;
+      var LIGHT = [246, 236, 231], DARK = [59, 47, 44];
+
+      /* Фон контактов темнеет по мере прокрутки: от бежевого до тёплого какао (цвет подвала). */
+      function darkenContacts(vh) {
+        var r = contacts.getBoundingClientRect();
+        var p = clamp((vh * 0.9 - r.top) / (vh * 0.55));
+        var e = p * p * (3 - 2 * p);
+        contacts.style.backgroundColor = 'rgb(' + LIGHT.map(function (c, i) { return Math.round(c + (DARK[i] - c) * e); }).join(',') + ')';
+        contacts.classList.toggle('is-dark', p > 0.45);
+        nav.classList.toggle('is-dark', r.top < 64);
+      }
+
+      function onScroll() {
+        ticking = false;
+        nav.classList.toggle('is-scrolled', window.scrollY > 8);
+        darkenContacts(window.innerHeight);
+        if (!reduceMotion) {
+          var vh = window.innerHeight, r = heroMedia.getBoundingClientRect();
+          heroMedia.style.transform = 'scale(' + (0.9 + 0.1 * clamp((vh - r.top) / (vh * 0.9))).toFixed(4) + ')';
+        }
+      }
+      window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+      window.addEventListener('resize', onScroll);
+
+      function countUp(el) {
+        var target = parseFloat(el.dataset.count), dec = Number(el.dataset.decimals || 0);
+        if (reduceMotion) { el.textContent = target.toFixed(dec); return; }
+        var start = null;
+        setTimeout(function () { el.textContent = target.toFixed(dec); }, 1600);
+        function step(t) {
+          if (!start) start = t;
+          var k = clamp((t - start) / 1400), e = 1 - Math.pow(1 - k, 3);
+          el.textContent = (target * e).toFixed(dec);
+          if (k < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      function initReveal() {
+        var els = $all('.reveal');
+        if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('is-visible'); }); return; }
+        $all('[data-count]').forEach(function (el) { el.textContent = (0).toFixed(Number(el.dataset.decimals || 0)); });
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (!en.isIntersecting) return;
+            en.target.classList.add('is-visible');
+            $all('[data-count]', en.target).forEach(countUp);
+            io.unobserve(en.target);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      }
+
+      /* =====================================================================
+         ЗАПИСЬ
+         ===================================================================== */
+      var modal = $('#bookingModal'), lastFocus = null;
+
+      $('#branchOptions').innerHTML = BRANCHES.map(function (b) {
+        return (
+          '<label class="branch-option flex cursor-pointer items-center gap-4 rounded-2xl bg-tile p-4 transition sm:p-5">' +
+            '<input type="radio" name="branch" value="' + b.id + '" class="h-5 w-5 shrink-0 accent-rose">' +
+            '<span class="min-w-0 flex-1">' +
+              '<span class="block text-[19px] font-semibold tracking-tight">' + b.address + '</span>' +
+              '<span class="mt-0.5 block text-[13px] text-muted">' + b.details + '</span>' +
+              '<span class="mt-0.5 block text-[13px] text-muted">' + statusHtml(b) + '</span>' +
+            '</span>' +
+            '<span class="shrink-0 text-[13px] text-muted">★ ' + b.rating + '</span>' +
+          '</label>'
+        );
+      }).join('');
+
+      $('#branchOptions').addEventListener('change', function (e) { if (e.target.name === 'branch') setBranch(e.target.value); });
+
+      function setBranch(id) {
+        chosenBranch = id;
+        var r = $('input[name="branch"][value="' + id + '"]');
+        if (r) r.checked = true;
+        $('#toStep2').disabled = false;
+      }
+
+      function renderBookingServices() {
+        $('#bookingServices').innerHTML = selected.map(function (id) {
+          var s = svc(id);
+          return '<li class="flex items-center justify-between gap-3">' +
+            '<span class="min-w-0">' + s.name + '<span class="whitespace-nowrap text-muted"> · ' + s.price + '</span></span>' +
+            '<button type="button" data-remove="' + id + '" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-muted transition hover:bg-white hover:text-ink" aria-label="Убрать: ' + s.name + '">' +
+              '<svg class="h-3 w-3" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg>' +
+            '</button></li>';
+        }).join('');
+        $('#bookingEmpty').classList.toggle('hidden', selected.length > 0);
+        $('#bookingTotal').textContent = selected.length ? 'от ' + rub(totalMin()) : '';
+      }
+
+      $('#bookingServices').addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-remove]');
+        if (btn) toggleService(btn.dataset.remove);
+      });
+
+      /* Одна запись в YClients — это один мастер. Услуги разных направлений (маникюр, педикюр,
+         брови, ресницы, макияж, укладки) делают разные мастера, поэтому делим выбор на отдельные
+         записи и открываем YClients для каждой по очереди. */
+      function visitsFor() {
+        var list = [], byKey = {};
+        selected.forEach(function (id) {
+          var s = svc(id), key = s.cat === 'nails' ? s.group : s.cat;
+          if (!byKey[key]) { byKey[key] = { label: s.cat === 'nails' ? s.group : SERVICES[s.cat].title, ids: [] }; list.push(byKey[key]); }
+          byKey[key].ids.push(id);
+        });
+        return list;
+      }
+
+      /* Ссылка на онлайн-запись YClients: форма открывается сразу на выборе даты,
+         YClients показывает только дни и часы, когда есть свободные мастера. */
+      function yclientsLink(b, ids) {
+        var yc = ids.map(function (id) { return svc(id).yc[b.yc]; }).filter(Boolean);
+        if (!yc.length) return b.yclientsUrl + '/personal/menu?o=';
+        return b.yclientsUrl + '/personal/select-time?o=' + yc.map(function (x) { return 's' + x; }).join('');
+      }
+
+      var visits = [], opened = {};
+
+      function renderVisits() {
+        $('#visitList').innerHTML = visits.map(function (v, i) {
+          var was = opened[i];
+          return '<li class="rounded-2xl bg-tile p-4 sm:p-5">' +
+            '<div class="flex items-start justify-between gap-3">' +
+              '<div class="min-w-0">' +
+                '<p class="text-[13px] font-semibold uppercase tracking-[.12em] text-terra">Запись ' + (i + 1) + ' · ' + v.label + '</p>' +
+                '<p class="mt-1 text-[16px] leading-snug">' + v.ids.map(function (id) { return svc(id).name; }).join(', ') + '</p>' +
+              '</div>' +
+              (was ? '<span class="mt-0.5 shrink-0 rounded-full bg-white px-3 py-1 text-[13px] text-muted">открывали</span>' : '') +
+            '</div>' +
+            '<button type="button" data-visit="' + i + '" class="mt-4 w-full rounded-full ' + (was ? 'bg-white text-rose' : 'bg-rose text-white hover:bg-rose-hover') + ' py-3 text-[16px] font-medium transition">' + (was ? 'Открыть снова' : 'Выбрать мастера и время') + '</button>' +
+          '</li>';
+        }).join('');
+      }
+
+      $('#visitList').addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-visit]');
+        if (btn) showStep(2, Number(btn.dataset.visit));
+      });
+
+      /* n — шаг; visit — номер записи, если записей несколько (иначе не указывается). */
+      function showStep(n, visit) {
+        var b = branchById(chosenBranch);
+        if (n === 2) visits = visitsFor();
+        var multi = n === 2 && b && b.yclientsUrl && visits.length > 1;
+        var widget = n === 2 && b && b.yclientsUrl && (!multi || typeof visit === 'number');
+        var list = multi && !widget;
+        var offline = n === 2 && b && !b.yclientsUrl;
+        $('#stepNum').textContent = n;
+        $('#bookingTitle').textContent = n === 1 ? 'Выберите филиал' : list ? 'Ваши записи' : widget ? (multi ? 'Запись ' + (visit + 1) + ' · ' + visits[visit].label : 'Свободное время') : 'Запись в филиал';
+        $('#step1').classList.toggle('hidden', n !== 1);
+        $('#step2Widget').classList.toggle('hidden', !widget);
+        $('#step2Widget').classList.toggle('flex', !!widget);
+        $('#step2Multi').classList.toggle('hidden', !list);
+        $('#step2Offline').classList.toggle('hidden', !offline);
+
+        if (widget) {
+          var url = yclientsLink(b, multi ? visits[visit].ids : selected);
+          if (multi) opened[visit] = true;
+          if ($('#yclientsFrame').getAttribute('src') !== url) $('#yclientsFrame').setAttribute('src', url);
+          $('#widgetBranch').textContent = b.address;
+          $('#widgetNewTab').href = url;
+          $('#widgetBack').textContent = multi ? '‹ Все записи' : '‹ Филиал';
+          $('#widgetBack').dataset.to = multi ? 'list' : 'branch';
+        } else if (list) {
+          renderVisits();
+        } else if (offline) {
+          $('#offlineBranch').textContent = b.address;
+        }
+      }
+
+      $('#toStep2').addEventListener('click', function () { if (chosenBranch) { opened = {}; showStep(2); } });
+      $all('[data-back]').forEach(function (b) { b.addEventListener('click', function () { showStep(1); }); });
+      $('#widgetBack').addEventListener('click', function () { if (this.dataset.to === 'list') showStep(2); else showStep(1); });
+
+      function openBooking(branchId) {
+        lastFocus = document.activeElement;
+        if (typeof branchId === 'string') setBranch(branchId);
+        renderBookingServices();
+        showStep(1);
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        setTimeout(function () { ($('input[name="branch"]:checked') || $('input[name="branch"]')).focus({ preventScroll: true }); }, 350);
+      }
+
+      function closeBooking() {
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+      }
+
+      $all('[data-open-booking]').forEach(function (b) { b.addEventListener('click', function () { openBooking(); }); });
+      modal.addEventListener('click', function (e) { if (e.target === modal || e.target.closest('[data-close-booking]')) closeBooking(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        if (modal.getAttribute('aria-hidden') === 'false') closeBooking();
+        if (menu.getAttribute('aria-hidden') === 'false') setMenu(false);
+      });
+
+      /* ---------- Старт ---------- */
+      renderServices(false);
+      updateSelection();
+      initReveal();
+      onScroll();
+    })();
+  </script>
+</body>
+</html>
